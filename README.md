@@ -1,12 +1,38 @@
-# React + Vite
+Log - 4/22/25
+    [1] Created the repository
+    [2] Verified the functionality of the gh-pages workflow.
+    [1] Cleared the default new-project vite layout.
+    [2] Installed Tailwind as well as a few other packages.
+    [3] Created a basic prototype of the website with working category filters!
+    [1] Styled it to fit the OC color-palette as well as centering the title and filters.
+    [3] Added links to legitimate resources and events.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+Backlog
+- Bugs
+    N/A
+- Features
+    [1] An icon for the site
+    [1] Add OC logo/branding? as a link to the offical OC website?
+    [1] Hover effect for the "access resource" button. Make it consistent with other buttons across the site
+    [?] Cleaner UI / CSS
+    [3] Favoriting feature. Make the favorites actually work, and add a seperate category for them.
+    [?] Retrieve OC events dynamically. Store them in the resources folder?
+    [?] Search function?
+    [?] Allow students to rate resources?
+    [?] Allow students to request to add new resources?
+- Technical Debt
+    [?] Is the resource.js file necessary for when resources are retrieved automatically?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Completed: 
+- Bugs
+    N/A
+- Features
+    [3] Created a basic prototype of the website with working category filters!
+    [1] Styled it to fit the OC color-palette as well as centering the title and filters.
+    [3] Added links to legitimate resources and events.
+- Technical Debt
+    [2] Verified the functionality of the gh-pages workflow.
+    [1] Cleared the default new-project vite layout.
+    [2] Installed Tailwind as well as a few other packages.
