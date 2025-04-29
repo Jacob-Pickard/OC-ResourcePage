@@ -1,0 +1,32 @@
+/* Highlight favorited resources */
+.favorite-button.favorited {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+    border: 2px solid orange;
+}
+
+/* Favorites category styling */
+#favorites-category {
+    border: 2px solid gold;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #fffbe6;
+}
+
+/* Highlight card for favorited resources */
+.bg-yellow-100 {
+    background-color: #fffbe6;
+}
+
+.border-yellow-500 {
+    border-color: #f59e0b;
+}
+
+.bg-yellow-500 {
+    background-color: #f59e0b;
+}
+
+.border-yellow-700 {
+    border-color: #b45309;
+}
