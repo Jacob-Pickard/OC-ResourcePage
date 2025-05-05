@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { resources } from './data/resources';
 import ResourceList from './components/ResourceList';
 import Filter from './components/Filter';
-import './app.css'; // Import Tailwind styles
+import '../styles/app.css'; // Corrected path
 
 export default function App() {
   const [favorites, setFavorites] = useState(() => JSON.parse(localStorage.getItem('favorites')) || []);
@@ -40,21 +40,34 @@ export default function App() {
 
   return (
     <div className="p-4 min-h-screen bg-secondary-color text-text-color">
-      <header className="flex justify-center items-center mb-4">
+      <header className="flex items-center justify-center mb-4 relative">
+        <a
+          href="https://www.olympic.edu"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute left-0"
+        >
+          <img src="/OC-ResourcePage/logo.svg" alt="Olympic College Logo" className="h-16" />
+        </a>
         <h1 className="text-2xl font-bold text-primary-color">Olympic College Resource Hub</h1>
       </header>
-      <div className="flex justify-center mb-4">
-        <Filter
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onSelectCategory={setSelectedCategory}
+      <div className="flex-grow">
+        <div className="flex justify-center mb-4">
+          <Filter
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={setSelectedCategory}
+          />
+        </div>
+        <ResourceList
+          resources={selectedCategory === 'All' ? prioritizedResources : filteredResources}
+          onFavorite={handleFavorite}
+          favorites={favorites}
         />
       </div>
-      <ResourceList
-        resources={selectedCategory === 'All' ? prioritizedResources : filteredResources}
-        onFavorite={handleFavorite}
-        favorites={favorites}
-      />
+      <footer className="bg-primary-color text-secondary-color text-center py-4 mt-4">
+        © {new Date().getFullYear()} Olympic College. All rights reserved. Designed by Jacob Pickard.
+      </footer>
     </div>
   );
 }
