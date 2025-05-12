@@ -1,16 +1,47 @@
 import React, { useState, useEffect } from 'react';
-import { resources } from './data/resources';
+import { resources as staticResources } from './data/resources';
 import ResourceList from './components/ResourceList';
 import Filter from './components/Filter';
 import '../styles/app.css'; // Corrected path
 
+// Utility function to format date and time
+function formatDateTime(datetime) {
+  if (!datetime) return '';
+  const date = new Date(datetime);
+  const options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+  return date.toLocaleDateString(undefined, options);
+}
+
 export default function App() {
   const [favorites, setFavorites] = useState(() => JSON.parse(localStorage.getItem('favorites')) || []);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [scrapedEvents, setScrapedEvents] = useState([]);
+  const [resources, setResources] = useState(staticResources);
 
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
+
+  useEffect(() => {
+    async function fetchEvents() {
+      try {
+        const response = await fetch('http://3.85.63.104:80/api/events'); //place current server IP here as it unfortunately changes
+        const data = await response.json();
+        const formattedEvents = data.map((event, index) => ({
+          id: staticResources.length + index + 1, // Ensure unique IDs
+          category: 'Campus Events', // Assign a category
+          name: event.title,
+          description: `${event.description || ''} ${formatDateTime(event.date) || ''} ${event.location || ''}`.trim(),
+          link: event.link,
+        }));
+        setScrapedEvents(formattedEvents);
+        setResources([...staticResources, ...formattedEvents]); // Merge static and scraped resources
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    }
+    fetchEvents();
+  }, []);
 
   const categories = [
     'All',

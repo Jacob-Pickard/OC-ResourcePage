@@ -86,27 +86,6 @@ export const resources = [
   {
     id: 12,
     category: 'Campus Events',
-    name: 'AI and YOU: Exploring the Human Impact',
-    description: 'A roundtable on AI’s social, environmental, and ethical impact. Apr 22 at 12pm in Bldg. 12, Rm. 200.',
-    link: 'https://www.olympic.edu/events-calendar/ai-and-you-exploring-human-impact'
-  },
-  {
-    id: 13,
-    category: 'Campus Events',
-    name: 'Earth Day Extravaganza',
-    description: 'Interactive demos and sustainability workshops. Apr 22 at 3pm in Bldg. 10',
-    link: 'https://www.olympic.edu/events-calendar/earth-day-extravaganza'
-  },
-  {
-    id: 14,
-    category: 'Campus Events',
-    name: 'Tree Hour',
-    description: 'Guided walking tour of campus trees. Apr 22 at 2pm, meet at Pi Square.',
-    link: 'https://www.olympic.edu/events-calendar/tree-hour'
-  },
-  {
-    id: 15,
-    category: 'Campus Events',
     name: 'Events Calendar',
     description: 'Check out the full list of upcoming events and activities on campus.',
     link: 'https://www.olympic.edu/events-calendar'
@@ -114,35 +93,35 @@ export const resources = [
 
   // Technology & Online Learning
   {
-    id: 16,
+    id: 13,
     category: 'Student Support',
     name: 'Student Online Support',
     description: 'Provides assistance with Canvas, online learning tools, and technical support.',
     link: 'https://www.olympic.edu/academics/academic-success-programs/student-online-support'
   },
   {
-    id: 17,
+    id: 14,
     category: 'Student Support',
     name: 'Student Accounts Support',
     description: 'Guides students in activating and managing their ctcLink and email accounts.',
     link: 'https://www.olympic.edu/student-life-support/it-help-desk/student-accounts'
   },
   {
-    id: 18,
+    id: 15,
     category: 'Student Support',
     name: 'OC Fitness Center',
     description: 'Free student access to on-campus fitness center.',
     link: 'https://www.olympic.edu/student-life-support/fitness-center'
   },
   {
-    id: 19,
+    id: 16,
     category: 'Student Support',
     name: 'Student Recreation',
     description: 'Reduced prices on local gyms and rec programs.',
     link: 'https://www.olympic.edu/student-life-support/recreation'
   },
   {
-    id: 20,
+    id: 17,
     category: 'Student Support',
     name: 'Child Care Services',
     description: 'Offers child care support to student parents.',

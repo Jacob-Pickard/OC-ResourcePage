@@ -1,3 +1,12 @@
+Log 5/12/25
+    [X] Installed several packages today (express, axios, cheerio)
+    [X] Setup an EC2 Backend through AWS
+    [X] Setup a server.js which serves my events API
+    [X] Created scraper.js (and testScraper.js to actually run it) which grabs ALL of the events (via axios) from the OC Events Calendar site by using the structuring/classnames of the title, body, and link to create our API. Cheerio parses the info from axios to create the api.
+    [X] Created an async function in app.jsx to accept and parse all of the events that come in through the API
+    [X] Created a function that formats the weird time format provided by the scraper, to make the user readability easier.
+    [X] Short Demo Video of the scraper and API in use.
+
 Log 5/5/25
     [2] Added an icon for the site
     [2] Add OC logo as a link the official olympic college website homepage
@@ -27,7 +36,7 @@ Log - 4/22/25
 
 Backlog
 - Bugs
-    N/A
+    [X] Favorite Button and Access
 - Features
     [?] Make the cards containing the events more visually appealing, perhaps grabbing the image from the associated event/page?
     [?] Retrieve OC events dynamically. Store them in the resources folder?
@@ -36,6 +45,7 @@ Backlog
     [?] Allow students to rate resources?
     [?] Allow students to request to add new resources?
 - Technical Debt
+    [?] Determine how the scraped resources should be stored/retrieved? Is an API better for such a large amount of events? I was seeing loadtime issues when using my api, likely due to the large amount of information being retrieved.
     [?] Is the resource.js file necessary for when resources are retrieved automatically?
     [1] Add a breakpoint to fix the OC logo button clipping over the title on smaller viewports.
     [1] Add a message for when there are no resources in a category? Or something that just re-routes you to the main page.
@@ -45,6 +55,13 @@ Completed:
 - Bugs
     N/A
 - Features
+    [X] Installed several packages today (express, axios, cheerio)
+    [X] Setup an EC2 Backend through AWS
+    [X] Setup a server.js which serves my events API
+    [X] Created scraper.js (and testScraper.js to actually run it) which grabs ALL of the events from the OC Events Calendar site by using the structuring/classnames of the title, body, and link to create our API.
+    [X] Created an async function in app.jsx to accept and parse all of the events that come in through the API
+    [X] Created a function that formats the weird time format provided by the scraper, to make the user readability easier.
+    [X] Short Demo Video of the scraper and API in use.
     [3] Updated the site's overall CSS/UI with some nice new glow effects for a new favorite.
     [2] Updated the site to use fonts consistent with the OC homepage (Oswald, Open sans)
     [1] Added a footer to the bottom of the website.
