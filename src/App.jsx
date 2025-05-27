@@ -25,7 +25,7 @@ export default function App() {
   useEffect(() => {
     async function fetchEvents() {
       try {
-        const response = await fetch('http://3.85.63.104:80/api/events'); //place current server IP here as it unfortunately changes
+        const response = await fetch('https://0hvka86vg2.execute-api.us-east-1.amazonaws.com/events'); // Use your API Gateway URL here
         const data = await response.json();
         const formattedEvents = data.map((event, index) => ({
           id: staticResources.length + index + 1, // Ensure unique IDs

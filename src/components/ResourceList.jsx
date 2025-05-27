@@ -6,13 +6,15 @@ export default function ResourceList({ resources, onFavorite, favorites }) {
       {resources.map((resource) => (
         <div
           key={resource.id}
-          className={`resource-card ${
+          className={`resource-card flex flex-col ${
             favorites.includes(resource.id) ? 'favorited' : ''
           }`}
         >
-          <h3>{resource.name}</h3>
-          <p>{resource.description}</p>
-          <div className="actions flex gap-2">
+          <div className="flex-grow">
+            <h3>{resource.name}</h3>
+            <p>{resource.description}</p>
+          </div>
+          <div className="actions flex gap-2 mt-auto">
             <button
               onClick={() => onFavorite(resource)}
               className={`favorite-button rounded-full ${

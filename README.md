@@ -1,3 +1,13 @@
+Log 5/27/25
+    [X] Implemented a full "serverless" backend. This is done by created a lambda function for the scraper which runs weekly on monday at midnight, which then stores this output into an S3 bucket. Then, I have a seperate lambda function which reads the information and places it into an API endpoint, this eliminates the loadtime issues as well as having a permanent storage for the events.
+    [X] Edited app.jsx to use this new API endpoint
+    [X] Removed the old API endpoint and lambda function
+    [X] Removed all the old "server" files as I do not have an EC2 instance any longer. Also renamed the folder which contains the code for my backend to "backend-mirror"
+
+Log 5/20/25
+    [X] Fixed the Favorite Button and Access resource button not staying towards the bottom of the cards with longer resource summaries.
+    [X] Created and implemented a basic lambda function with an API gateway which is called everytime the site is opened. Unfortunately this results in horrendous loadtimes so I am going to have to save the events to an S3 bucket and then have the scraper run on a possibly weekly basis? Then have another lambda retrieve the events and output to my app.
+
 Log 5/12/25
     [X] Installed several packages today (express, axios, cheerio)
     [X] Setup an EC2 Backend through AWS
@@ -36,7 +46,7 @@ Log - 4/22/25
 
 Backlog
 - Bugs
-    [X] Favorite Button and Access
+
 - Features
     [?] Make the cards containing the events more visually appealing, perhaps grabbing the image from the associated event/page?
     [?] Retrieve OC events dynamically. Store them in the resources folder?
@@ -53,8 +63,9 @@ Backlog
 
 Completed: 
 - Bugs
-    N/A
+    [X] Favorite Button and Access resource button not staying towards the bottom of the cards with longer resource summaries.
 - Features
+    [X] Implemented a full "serverless" backend. This is done by created a lambda function for the scraper which runs weekly on monday at midnight, which then stores this output into an S3 bucket. Then, I have a seperate lambda function which reads the information and places it into an API endpoint, this eliminates the loadtime issues as well as having a permanent storage for the events.
     [X] Installed several packages today (express, axios, cheerio)
     [X] Setup an EC2 Backend through AWS
     [X] Setup a server.js which serves my events API
@@ -75,6 +86,9 @@ Completed:
     [1] Added hover effects to the site
     [?] Swapped the styling between the favorite and access resource buttons. The favorite button will fill with a yellow/gold on hover to indicate a favorite.
 - Technical Debt
+    [X] Removed all the old "server" files as I do not have an EC2 instance any longer. Also renamed the folder which contains the code for my backend to "backend-mirror"
+    [X] Removed the old API endpoint and lambda function
+    [X] Edited app.jsx to use this new API endpoint
     [1] Relocated all of the style files to the styles folder
     [2] Verified the functionality of the gh-pages workflow.
     [1] Cleared the default new-project vite layout.
