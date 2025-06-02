@@ -1,3 +1,7 @@
+Log 6/2/25
+    [X] Favorited resources within filters now go to the top as intended.
+    [X] Site now shows a message when there are no resources in the current category, and provides a button to return to the main page (All category)
+
 Log 5/27/25
     [X] Implemented a full "serverless" backend. This is done by created a lambda function for the scraper which runs weekly on monday at midnight, which then stores this output into an S3 bucket. Then, I have a seperate lambda function which reads the information and places it into an API endpoint, this eliminates the loadtime issues as well as having a permanent storage for the events.
     [X] Edited app.jsx to use this new API endpoint
@@ -46,23 +50,20 @@ Log - 4/22/25
 
 Backlog
 - Bugs
-
+    N/A
 - Features
     [?] Make the cards containing the events more visually appealing, perhaps grabbing the image from the associated event/page?
-    [?] Retrieve OC events dynamically. Store them in the resources folder?
     [?] Sorting feature (i.e. popular/featured)
     [?] Search function?
     [?] Allow students to rate resources?
     [?] Allow students to request to add new resources?
 - Technical Debt
-    [?] Determine how the scraped resources should be stored/retrieved? Is an API better for such a large amount of events? I was seeing loadtime issues when using my api, likely due to the large amount of information being retrieved.
-    [?] Is the resource.js file necessary for when resources are retrieved automatically?
     [1] Add a breakpoint to fix the OC logo button clipping over the title on smaller viewports.
-    [1] Add a message for when there are no resources in a category? Or something that just re-routes you to the main page.
 
 
 Completed: 
 - Bugs
+    [X] Favorited resources within filters now go to the top as intended.
     [X] Favorite Button and Access resource button not staying towards the bottom of the cards with longer resource summaries.
 - Features
     [X] Implemented a full "serverless" backend. This is done by created a lambda function for the scraper which runs weekly on monday at midnight, which then stores this output into an S3 bucket. Then, I have a seperate lambda function which reads the information and places it into an API endpoint, this eliminates the loadtime issues as well as having a permanent storage for the events.
@@ -86,6 +87,7 @@ Completed:
     [1] Added hover effects to the site
     [?] Swapped the styling between the favorite and access resource buttons. The favorite button will fill with a yellow/gold on hover to indicate a favorite.
 - Technical Debt
+    [X] Site now shows a message when there are no resources in the current category, and provides a button to return to the main page (All category)
     [X] Removed all the old "server" files as I do not have an EC2 instance any longer. Also renamed the folder which contains the code for my backend to "backend-mirror"
     [X] Removed the old API endpoint and lambda function
     [X] Edited app.jsx to use this new API endpoint

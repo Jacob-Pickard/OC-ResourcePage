@@ -1,6 +1,22 @@
 import React from 'react';
 
-export default function ResourceList({ resources, onFavorite, favorites }) {
+export default function ResourceList({ resources, onFavorite, favorites, onBackToAll }) {
+  if (!resources.length) {
+    return (
+      <div className="w-full flex flex-col items-center justify-center py-12">
+        <p className="text-lg text-gray-600 mb-4">No resources found in this category.</p>
+        {onBackToAll && (
+          <button
+            className="bg-primary-color text-secondary-color px-4 py-2 rounded hover:bg-accent-color"
+            onClick={onBackToAll}
+          >
+            Back to All Resources
+          </button>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {resources.map((resource) => (

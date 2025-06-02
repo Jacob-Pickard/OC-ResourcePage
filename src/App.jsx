@@ -49,12 +49,21 @@ export default function App() {
     ...new Set(resources.map((r) => r.category)),
   ];
 
+  // Helper to prioritize favorites in any list
+  const prioritizeFavorites = (resourceList) => [
+    ...resourceList.filter((r) => favorites.includes(r.id)),
+    ...resourceList.filter((r) => !favorites.includes(r.id)),
+  ];
+
   const filteredResources =
     selectedCategory === 'All'
       ? resources
       : selectedCategory === 'Favorites'
       ? resources.filter((r) => favorites.includes(r.id))
       : resources.filter((r) => r.category === selectedCategory);
+
+  // Always prioritize favorites in the filtered list
+  const displayedResources = prioritizeFavorites(filteredResources);
 
   const handleFavorite = (resource) => {
     setFavorites((prevFavorites) =>
@@ -91,9 +100,10 @@ export default function App() {
           />
         </div>
         <ResourceList
-          resources={selectedCategory === 'All' ? prioritizedResources : filteredResources}
+          resources={displayedResources}
           onFavorite={handleFavorite}
           favorites={favorites}
+          onBackToAll={selectedCategory !== 'All' ? () => setSelectedCategory('All') : undefined}
         />
       </div>
       <footer className="bg-primary-color text-secondary-color text-center py-4 mt-4">
